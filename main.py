@@ -54,7 +54,9 @@ for event in gcal.walk('VEVENT'):
                 length = False
 
             if length:
+                print(dtstart)
                 message2 = "Start: %s for %s minutes" % (dtstart, length)
+                a = datetime.now().replace(microsecond=0)
                 print(message1, message2)
-                Client(usertoken).send_message(message2, title=message1)
+                #Client(usertoken).send_message(message2, title=message1)
                 print('Notification sent')
